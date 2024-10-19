@@ -1,0 +1,19 @@
+name: Check for Tag
+
+on: push
+
+jobs:
+  check-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          # get full commit history
+          fetch-depth: 0
+      - name: list directories
+        run: |
+          ls -la
+          ls -la themes/
